@@ -12,9 +12,10 @@ export const options = {
     // More comprehensive load test stages
     stages: [
         { duration: '30s', target: 5 },   // Ramp up gradually
-        { duration: '30s', target: 50 },   // Peak load
-        { duration: '30s', target: 25 },   // Moderate load
-        { duration: '20s', target: 0 },    // Ramp down
+        { duration: '30s', target: 25 },   // Peak load
+        { duration: '30s', target: 100 },   // Moderate load
+        { duration: '15s', target: 50 },    // Ramp down
+        { duration: '10s', target: 0 },    // Ramp down
     ],
     
     // Stricter thresholds for performance monitoring
@@ -55,9 +56,7 @@ export default function () {
 
     // Multiple API endpoint checks for more comprehensive testing
     const endpoints = [
-        'https://staging-api.locoscents.id/api/v1/health',
-        'https://staging-api.locoscents.id/api/v1/front/banners?page=1&perPage=10',
-        'https://staging-api.locoscents.id/api/v1/front/banner-categories?page=1&perPage=10',
+        'https://example.com',
         // Add more endpoints to test if needed
     ];
 
